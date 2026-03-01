@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Estilo.css">
+   
+</head>
+    <body class="portfolio">
+  <h1>
+    <span class="bg"></span>
+    <a href="index.html">SamArt</a>
+</h1>
+ <nav>
+    <ul>
+    <li><a href="Portfólio.html" class="ativo">Portfólio</a></li>
+    <li><a href="Contato.html">Contato</a></li>
+    </ul>
+</nav>
+<div class="Titport">
+<h2>⬇ Confira os serviços ⬇</h2>
+<p>© SamArt</p>
+</div>
+<div class="container">
+
+    <div class="card">
+        <img src="por1.png" class="img1" alt="">
+        <div class="texto">
+            <p>Cartazes e banners para você!</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="por2.png" class="img2" alt="">
+        <div class="texto">
+            <p>Posts, carrosséis e conteúdos para o seu engajamento!</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="por3.png" class="img3" alt="">
+        <div class="texto">
+            <p>Impressão personalizada e arquivos de impressão no tamanho certo!</p>
+        </div>
+    </div>
+
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Fade in ao carregar
+    document.body.classList.add('loaded');
+
+    // Seleciona todos os links internos
+    const links = document.querySelectorAll('a[href^="' + window.location.origin + '"]');
+
+    links.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault(); // impede navegação imediata
+            const href = link.href;
+
+            // Aplica fade-out
+            document.body.classList.add('fade-out');
+
+            // Navega após a transição
+            setTimeout(() => {
+                window.location = href;
+            }, 500); // tempo do fade
+        });
+    });
+});
+</script>
+</body>
+</html>
