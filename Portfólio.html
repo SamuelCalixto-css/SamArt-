@@ -46,29 +46,6 @@
     </div>
 
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Fade in ao carregar
-    document.body.classList.add('loaded');
-
-    // Seleciona todos os links internos
-    const links = document.querySelectorAll('a[href^="' + window.location.origin + '"]');
-
-    links.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault(); // impede navegação imediata
-            const href = link.href;
-
-            // Aplica fade-out
-            document.body.classList.add('fade-out');
-
-            // Navega após a transição
-            setTimeout(() => {
-                window.location = href;
-            }, 500); // tempo do fade
-        });
-    });
-});
-</script>
 </body>
+
 </html>
