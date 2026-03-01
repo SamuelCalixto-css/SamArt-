@@ -39,21 +39,20 @@
   <!-- JavaScript -->
   <script>
   // Fade-in e fade-out dos links
-  document.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('loaded');
-
-      const links = document.querySelectorAll('a[href^="' + window.location.origin + '"]');
-      links.forEach(link => {
-          link.addEventListener('click', e => {
-              e.preventDefault();
-              const href = link.href;
-              document.body.classList.add('fade-out');
-              setTimeout(() => {
-                  window.location = href;
-              }, 500);
-          });
-      });
-  });
+ document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+    const links = document.querySelectorAll('a[href]'); // pega todos os links
+    links.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location = href;
+            }, 500);
+        });
+    });
+});
   </script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -89,3 +88,4 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 </html>
+
