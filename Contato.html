@@ -35,26 +35,6 @@
   <div class="mensagem">
       ✔ Mensagem enviada com sucesso!
   </div>
-</section>
-  <!-- JavaScript -->
-  <script>
-  // Fade-in e fade-out dos links
-  document.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('loaded');
-
-      const links = document.querySelectorAll('a[href^="' + window.location.origin + '"]');
-      links.forEach(link => {
-          link.addEventListener('click', e => {
-              e.preventDefault();
-              const href = link.href;
-              document.body.classList.add('fade-out');
-              setTimeout(() => {
-                  window.location = href;
-              }, 500);
-          });
-      });
-  });
-  </script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("formulario");
@@ -87,4 +67,5 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 </body>
+
 </html>
