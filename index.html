@@ -27,24 +27,17 @@
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // Fade in ao carregar
+document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
-
-    // Seleciona todos os links internos
-    const links = document.querySelectorAll('a[href^="' + window.location.origin + '"]');
-
+    const links = document.querySelectorAll('a[href]'); // pega todos os links
     links.forEach(link => {
         link.addEventListener('click', e => {
-            e.preventDefault(); // impede navegação imediata
-            const href = link.href;
-
-            // Aplica fade-out
+            e.preventDefault();
+            const href = link.getAttribute('href');
             document.body.classList.add('fade-out');
-
-            // Navega após a transição
             setTimeout(() => {
                 window.location = href;
-            }, 500); // tempo do fade
+            }, 500);
         });
     });
 });
@@ -52,3 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
+
